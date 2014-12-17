@@ -1,4 +1,4 @@
-#新創事業部 JavaScript Coding Style
+JavaScript Coding Style
 
 ## 編輯歷程
 
