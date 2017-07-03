@@ -69,6 +69,7 @@
 
 
 
+
 ## 章節
 #### 1. 基本格式
 
@@ -140,12 +141,12 @@
 ### 1.1  縮排<a id="1_indent"></a>
 #####程式碼的縮排採用`四個空格字元`, 不可使用tab character
 
-因為不同系統對於tab character的解釋不一致, 造成用不同編輯器打開文件看到的結果不一樣。
+因為不同系統對於 tab character 的解釋不一致, 造成用不同編輯器打開文件看到的結果不一樣。
 
 
 ### 1.2 語句結尾<a id="1_end"></a>
 #####程式碼的結尾`一定要加上分號(;)`
-JavaScript有自動分號插入(Automatic Semicolon Insertion, ASI)機制, 即使省略分號大部份情形下也可以正常工作, 但是ASI的分號插入機制非常複雜, 因此一定要加上分號, 避免發生下列情形.
+JavaScript有自動分號插入(Automatic Semicolon Insertion, ASI)機制, 即使省略分號大部份情形下也可以正常工作, 但是 ASI 的分號插入機制非常複雜, 因此一定要加上分號, 避免發生下列情形.
 
 ```
 // 原始程式碼
@@ -167,10 +168,10 @@ function getData() {
 }
 
 ```
-這樣會導致getData()回傳值為undefined.
+這樣會導致 getData() 回傳值為 undefined.
 
 ### 1.3 單行程式碼長度<a id="1_singleCode"></a>
-##### 單行程式碼長度`建議不超過80個字元`
+##### 單行程式碼長度`建議不超過 80 個字元`
 
 ### 1.4 換行規則<a id="1_changeCol"></a>
 ##### 在運算符號後換行, 下一行第一個變數對齊上一行第一個變數<br>
@@ -196,7 +197,7 @@ var result = someValue + anotherValue + myValue + hisValue + herValue +
 * 在方法(function)之間
 * 在方法中的區域變數(local variable)和第一條語句之間
 * 在多行或單行注解之前
-* 在方法內的邏輯片段之間插入空行,提高可讀性
+* 在方法內的邏輯片段之間插入空行, 提高可讀性
 
 ```
 function doSomething() {
@@ -281,7 +282,7 @@ var g_myVariable = 100;
 #### 1.6.4 建構函式(Constructor)
 ##### 用`大駝峰命名法`(Pascal Case), 命名前綴為`名詞`(Noun) <br>
 將函式跟建構函式用不同的命名方法,可以幫助我們快速定位問題,<br>
-你會知道用`大駝峰命名法命名的函數前面一定會有new關鍵字`,進而避免函式誤用的情況.
+你會知道用`大駝峰命名法命名的函數前面一定會有 new 關鍵字`, 進而避免函式誤用的情況.
 
 ```
 function Person(name) {
@@ -355,7 +356,7 @@ var price = .5;
 ```
 
 #### 1.7.3 布林値(Boolean)
-* 布林値`true`跟`false`所有字元`必須小寫`, 因為其他混合大小寫形式的true跟false都不是布林値
+* 布林値`true`跟`false`所有字元`必須小寫`, 因為其他混合大小寫形式的 true 跟 false 都不是布林値
 * 禁止使用建構函式(Constructor)
 
 ```
@@ -371,17 +372,17 @@ var isBool = new Boolean(true);
 
 #### 1.7.3 null
 
-* null所有字元`必須小寫`, 因為其他混合大小寫形式的null都不是null
-* 判斷物件是否為null,請用`嚴格相等(===)`與`嚴格不相等(!==)`符號
+* null所有字元`必須小寫`, 因為其他混合大小寫形式的 null 都不是 null
+* 判斷物件是否為null, 請用`嚴格相等(===)`與`嚴格不相等(!==)`符號
 
-##### 請在下列場景`儘量使用`null:
+##### 請在下列場景`儘量使用` null:
 * 當做一個未來可能成為物件的變數的初始值
-* 當函式的期望參數是物件時,可當作參數傳入
-* 當函式的期望回傳值為物件時,可當作回傳值傳出
+* 當函式的期望參數是物件時, 可當作參數傳入
+* 當函式的期望回傳值為物件時, 可當作回傳值傳出
 
-##### 請在下列場景`儘量不要使用`null:
-* 用null來檢測是否傳入了某個參數
-* 用null來檢測變數
+##### 請在下列場景`儘量不要使用` null:
+* 用 null 來檢測是否傳入了某個參數
+* 用 null 來檢測變數
 
 ```
 function doSomething(object) {
@@ -391,7 +392,7 @@ function doSomething(object) {
 // 好的寫法:當做一個未來可能成為物件的變數的初始值
 var person = null;
 
-// 好的寫法:當函式的期望參數是物件時,可當作參數傳入
+// 好的寫法:當函式的期望參數是物件時, 可當作參數傳入
 doSomething(null);
 
 // 好的寫法:當函式的期望回傳值為物件時, 可當作回傳值傳出
@@ -405,7 +406,7 @@ function getPerson() {
 	}
 }
 
-// 不好的寫法: null來檢測是否傳入了某個參數
+// 不好的寫法: 用 null 來檢測是否傳入了某個參數
 function doSomething(arg1, arg2) {
 
 	if (arg2 !== null) {
@@ -413,7 +414,7 @@ function doSomething(arg1, arg2) {
 	}
 }
 
-// 不好的寫法: 用null來檢測未初始化的變數
+// 不好的寫法: 用 null 來檢測未初始化的變數
 var person;
 
 if (person !== null) {
@@ -422,9 +423,9 @@ if (person !== null) {
 ```
 #####簡易檢測變數與參數方法
 
-* 直接用`if`判斷變數或參數
-* 無論是`null`還是`undefined`,都會當作false處理
-* 但是請注意,若變數的值為`0`,也會當作false處理
+* 直接用 `if` 判斷變數或參數
+* 無論是 `null` 還是 `undefined`, 都會當作 false 處理
+* 但是請注意,若變數的值為 `0`, 也會當作 false 處理
 
 ```
 var person;
@@ -447,8 +448,8 @@ if (personZero) {	// false
 
 #### 1.7.4 undefined
 ##### 在程式碼中`避免使用undefined`, 理由如下: 
-* 因為undefined常常會跟typeof返回值'undefined'混淆.<br>
-* 這樣可以確保只有在變數未宣告時typeof會回傳"undefined"
+* 因為 undefined 常常會跟 typeof 返回值 'undefined' 混淆.<br>
+* 這樣可以確保只有在變數未宣告時 typeof 會回傳 "undefined"
 * null == undefined // true, 但是這兩個值的用途大不相同
 
 
@@ -470,7 +471,7 @@ alert(typeof person2); // "undefined"
 ```
 
 #### 1.7.5 物件(Object)
-* 用物件實字(`{}`)(object literals)建立Object物件
+* 用物件實字(`{}`)(object literals)建立 Object 物件
 * 物件屬性在冒號(`:`)後需空一格
 
 ```
@@ -534,8 +535,8 @@ if (condition) {
 
 #### 2.2 多行注解<a id="2_multi"></a>
 ##### 多行注解請依照下列規則:
-* 多行注解之前要有`一個空行`, 星號之後要`空一格`,並跟`下一行程式碼對齊`
-* 程式碼尾部的注解,不要用多行注解
+* 多行注解之前要有`一個空行`, 星號之後要`空一格`, 並跟`下一行程式碼對齊`
+* 程式碼尾部的注解, 不要用多行注解
 * 可用來`注解掉大段程式碼`或用來寫`程式碼說明`
 
 ```
@@ -600,10 +601,10 @@ while (element && (element = element[axis])) { // 這邊是賦値操作無誤
 ```
 
 #### 2.4 注解聲明<a id="2_dsrp"></a>
-* TODO: 說明`程式碼尚未完成`,並寫出下一步要做的事情
-* HACK: 說明`程式碼用了非正規途徑解決某些問題`,要寫出為何使用hack的原因,這也表明未來可能有更好的解決方法
+* TODO: 說明`程式碼尚未完成`, 並寫出下一步要做的事情
+* HACK: 說明`程式碼用了非正規途徑解決某些問題`, 要寫出為何使用hack的原因,這也表明未來可能有更好的解決方法
 * XXX: 說明`程式碼是有問題`的要儘快修復
-* FIXME: 說明`程式碼是有問題`的要儘快修復,重要性僅次於XXX
+* FIXME: 說明`程式碼是有問題`的要儘快修復, 重要性僅次於XXX
 * REVIEW: 說明`程式碼如果要有任何的改動都需要進行評估與審核`
 
 ```
@@ -653,27 +654,26 @@ function myFunc() {
 ##### 對齊方式與間隔:
 * 將左大括號放置在語句中第一句程式碼的尾端
 * 在左圓括號之前和右圓括號之後各空一格
-* 第二個以後的條件判斷關鍵字開頭要對齊上一個右大括弧
+* 第二個以後的條件判斷關鍵字開頭要放置在上一個右大括弧後空一格
 
 ```
 if (codition) {
 	doSomething();
-} 
-else if(condition) {
+} else if(condition) {
 	doSomethingElse();
-}
-else { 
+} else { 
 	doSomethingElseElse();
 }
 ```
 
 #### 3.2 switch<a id="3_switch"></a>
-* 每條case語句相對於`switch`關鍵字縮排4個空格
-* 第二條case語句開始,每條case語句前後各有`一個空行`
-* 一般情況,case末尾一定要`搭配break關鍵字,除非為連續執行case(fall through)`
-* 若特殊情況下,需要連續執行case,必須在在case之間加上注解`/* fall through */`
-* 無論任何情況,都`不要省略default`
-* 不要將已知情況寫至default,例如有3個狀態a,b,c. 而b,c為同一個邏輯,`不要只寫a case而把b,c寫至default`
+* 每條 case 語句相對於 `switch `關鍵字縮排4個空格
+* 第二條 case 語句開始,每條 case 語句前後各有`一個空行`
+* 一般情況, case 末尾一定要`搭配 break 關鍵字,除非為連續執行 case(fall through)`
+* 若特殊情況下,需要連續執行 case, 必須在在 case 之間加上注解`/* fall through */`
+* ES2015, 如果 case 裡有變數, 請用大括弧避免變數污染
+* 無論任何情況, 都`不要省略 default`
+* 不要將已知情況寫至 default, 例如有3個狀態 a,b,c. 而 b,c 為同一個邏輯, `不要只寫 a case 而把 b,c 寫至 default`
 
 ```
 switch (condition) {
@@ -690,19 +690,25 @@ switch (condition) {
 		doSomething();
 		/* fall through */
 		
+	case 5: {
+		let myVar = 'hello';
+		doSomething(myVar);
+		break;
+	}
+		
 	default:
 		break;
 }
 ```
 
 #### 3.3 with<a id="3_with"></a>
-##### 避免使用`with`關鍵字
+##### 避免使用 `with` 關鍵字
 
 #### 3.4 for<a id="3_for"></a>
-* 宣告區若有多個變數, 每個變數`各自用var宣告並換行`
+* 宣告區若有多個變數, 每個變數`各自用 var 宣告並換行`
 * 變數之間若是`賦値符號(=)或運算符號(<, >, ==, !=)`, 符號左右需空一格
-* 在運算區塊`不要直接使用陣列length屬性`, 應該在宣告區將length儲存起來使用
-* 避免使用`continue`關鍵字,可用條件判斷式取代
+* 在運算區塊`不要直接使用陣列 length 屬性`, 應該在宣告區將 length 儲存起來使用
+* 避免使用 `continue` 關鍵字, 可用條件判斷式取代
 
 ```
 var values = [1, 2, 3, 4, 5, 6, 7];
@@ -729,9 +735,9 @@ for (i = 0; len = values.length; i < len; i++) {
 ```
 
 #### 3.5 for-in<a id="3_forin"></a>
-* 總是使用`hasOwnProperty()`來為for-in過濾出物件屬性,除非想查找原型(protoype)屬性
+* 總是使用 `hasOwnProperty()` 來為 for-in 過濾出物件屬性, 除非想查找原型(protoype)屬性
 * 若要查找原型(prototype)屬性, 必需要加上注解說明
-* for-in是用來遍歷物件屬性,禁止使用for-in來遍歷陣列(Array)
+* for-in 是用來遍歷物件屬性, 禁止使用 for-in 來遍歷陣列(Array)
 
 ```
 var person = {
@@ -740,7 +746,7 @@ var person = {
 	},
 	prop;
 
-// 總是使用`hasOwnProperty()`來為for-in過濾出物件屬性,除非想查找原型(protoype)屬性
+// 總是使用 `hasOwnProperty()` 來為 for-in 過濾出物件屬性, 除非想查找原型(protoype)屬性
 for (prop in person) {
 	
 	if (person.hasOwnProperty(prop)) {
@@ -755,7 +761,7 @@ for (prop in person) { // 包含對prototype的遍歷
 	alert('Property value is ' + person[prop]);
 }
 
-// 禁止使用for-in來遍歷陣列(Array)
+// 禁止使用 for-in 來遍歷陣列(Array)
 var values = [1, 2, 3, 4, 5];
 var	i;
 	
@@ -769,9 +775,9 @@ for (i in values) {
 
 ## 4. 變數, 函式<a id="4"></a>
 #### 4.1 變數宣告<a id="4_varDeclaration"></a>
-* 無論是全域變數或區域變數進行宣告,變數名稱前面一定要加上`var`關鍵字
+* 無論是全域變數或區域變數進行宣告, 變數名稱前面一定要加上 `var` 關鍵字
 * 總是將變數宣告作為函式內的第一條語句
-* 多個變數宣告時, 每個變數前面加上`var`關鍵字,變數需對齊,沒有初始值的變數要放在`變數語句的尾部`
+* 多個變數宣告時, 每個變數前面加上 `var` 關鍵字, 變數需對齊, 沒有初始值的變數要放在`變數語句的尾部`
 
 ```
 var g_someValue = 100;
@@ -791,46 +797,46 @@ function doSomething() {
 
 #### 4.1.1 變數宣告位置
 * 變數必須宣告在使用它的`程式碼上方`
-* 若有多個程式碼區塊使用到同一變數,宣告在最前面程式碼區塊的上方
+* 若有多個程式碼區塊使用到同一變數, 宣告在最前面程式碼區塊的上方
 
 ```
 function doSomething() {
 
-	// 變數可給程式碼區塊1,2,3使用
+	// 變數可給程式碼區塊 1, 2, 3 使用
 	var myVar1 = 1;
 	var myVar2 = 2;
 	var sum1;
 	
-	// 程式碼區塊1
+	// 程式碼區塊 1
 	sum1 = myVar1 + myVar2;
 	
 	
-	// 變數可給程式碼區塊2,3使用
+	// 變數可給程式碼區塊 2, 3 使用
 	var myVar3 = 3;
 	var myVar4 = 4;
 	var sum2;
 
-	// 程式碼區塊2
+	// 程式碼區塊 2
 	sum2 = myVar1 + myVar2 + myVar3;
 	
 	
-	// 變數可給程式碼區塊3使用
+	// 變數可給程式碼區塊 3 使用
 	var myVar5 = 5;
 	var myVar6 = 6;
 	var sum3;
 	
-	// 程式碼區塊3
+	// 程式碼區塊 3
 	sum3 = myVar1 + myVar3 + myVar5 + myVar6;
 }
 
 ```
 
 #### 4.2 函式宣告<a id="4_funcDeclaration"></a>
-* 函式名稱和左括號之間沒有空格,函數右括號`(`與左大括號`{`要空一格
-* 函式參數之間用`逗號加空一格`分開,參數與函式左右括號之間`沒有空格`
+* 函式名稱和左括號之間沒有空格, 函數右括號`(`與左大括號`{`要空一格
+* 函式參數之間用`逗號加空一格`分開, 參數與函式左右括號之間`沒有空格`
 * 立即函式要用一對原括號包裹起來
-* 函式內部的`局部函式要緊接著變數宣告之後宣告`,並且使用`函式表達式`
-* 如果函式`不會重複使用`,可使用`匿名函式`
+* 函式內部的`局部函式要緊接著變數宣告之後宣告`, 並且使用`函式表達式`
+* 如果函式`不會重複使用`, 可使用`匿名函式`
 * `函式宣告不可`在條件判斷語句中使用
 * `函式表達式可以`在條件判斷語句中使用
 
@@ -841,7 +847,7 @@ function doSomething(arr, someVal, isFunc) {
 	var	i;
 	var	len;
 
-	// 局部函式要緊接著變數宣告之後宣告,並且使用函式表達式
+	// 局部函式要緊接著變數宣告之後宣告, 並且使用函式表達式
 	var doSomethingElse = function(obj) {
 		
 		// 程式碼邏輯
@@ -892,16 +898,16 @@ else {
 
 #### 4.3 函式參數風格<a id="4_funcParams"></a>
 * callback function一律放在參數列的`最後面`
-* 如果參數有`兩個以上callback function`,請使用`函式表達式`,而避免直接使用匿名函式
-* 若有大量參數需傳遞給函式,或是參數數量可能會有多次變動,請使用`物件`封裝參數
+* 如果參數有`兩個以上callback function`, 請使用`函式表達式`,而避免直接使用匿名函式
+* 若有大量參數需傳遞給函式, 或是參數數量可能會有多次變動, 請使用`物件`封裝參數
 
 ```
-// 好的寫法: callback function放在參數列的最後面
+// 好的寫法: callback function 放在參數列的最後面
 myFunc(val1, val2, function() {
 	doSomething();
 });
 
-// 好的寫法: 參數有兩個以上callback function,使用函式表達式
+// 好的寫法: 參數有兩個以上callback function, 使用函式表達式
 var callback1 = function() {
 	doSomething1();
 }
@@ -910,7 +916,7 @@ var callback2 = function() {
 }
 myFunc(val1, val2, callback1, callback2);
 
-// 好的寫法: 若有大量參數需傳遞給函式,或是參數數量可能會有多次變動,使用物件封裝參數
+// 好的寫法: 若有大量參數需傳遞給函式, 或是參數數量可能會有多次變動, 使用物件封裝參數
 var myFunc = function(profile) {
 	alert(profile.name);
 	alert(profile.gender);
@@ -927,12 +933,12 @@ myFunc({
 	job: engineer
 });
 
-// 不好的寫法: callback function沒放在參數列的最後面
+// 不好的寫法: callback function 沒放在參數列的最後面
 myFunc(function() {
 	doSomething();
 }, val1, val2);
 
-// 不好的寫法: 參數有兩個以上callback function, 使用匿名函式
+// 不好的寫法: 參數有兩個以上 callback function, 使用匿名函式
 myFunc(val1, val2, function() {
 	doSomething1();
 }, function() {
@@ -948,8 +954,8 @@ var myFunc = function(name, gender, phone, age, job) {
 
 
 #### 4.4 函式建構式, eval(), setTimeout()和setInterval()<a id="4_funcConstructor"></a>
-* `禁止使用eval()`,除了別無他法的情況下,eval()容易產生XSS安全性問題 
-* setInterval()跟setTimeout()的內容`禁止使用字串,要用函數`
+* `禁止使用 eval()`, 除了別無他法的情況下, eval() 容易產生 XSS 安全性問題 
+* setInterval() 跟 setTimeout() 的內容`禁止使用字串, 要用函數`
 * 禁止使用建構式(Constructor)
 
 
@@ -967,7 +973,7 @@ var func = new Function('alert("Hello!");');
 ```
 
 #### 4.5 嚴格模式('use strict')<a id="4_strict"></a>
-* 不可將`'use strict'關鍵字用在全局作用域中`,以避免所有程式碼都用嚴格模式運作,導致其他未照嚴格模式規範的程式碼發生錯誤
+* 不可將` 'use strict' 關鍵字用在全局作用域中`,以避免所有程式碼都用嚴格模式運作, 導致其他未照嚴格模式規範的程式碼發生錯誤
 
 ```
 // 好的寫法
@@ -1051,7 +1057,7 @@ condition ? myFun1() : myFun2();
 4. ReferenceError: `找不到物件`時拋出
 5. SyntaxError: `語法錯誤的程式碼傳入eval()`時拋出
 6. TypeError: `變數被賦値意外的類型或呼叫不存在的方法`時(**經常發生**)
-7. URIError: encodeURI(), encodeURIComponent(), decodeURI()或decodeURIComponent()等傳遞`非法格式`時拋出
+7. URIError: encodeURI(), encodeURIComponent(), decodeURI() 或decodeURIComponent()等傳遞`非法格式`時拋出
 
 ```
 new eval(); // EvalError,FireFox 4+和IE8會拋出TypeError
@@ -1095,8 +1101,8 @@ catch(error) {
 
 #### 6.2 throw<a id="6_throw"></a>
 
-* `throw`負責引發異常
-* 總是使用`Error`物件或其子類別物件拋出錯誤
+* `throw` 負責引發異常
+* 總是使用 `Error` 物件或其子類別物件拋出錯誤
 
 ```
 // 好的寫法
@@ -1110,10 +1116,10 @@ throw new Date();
 ```
 
 #### 6.3 try-catch<a id="6_trycatch"></a>
-* `catch`負責捕捉異常
-* `catch`區塊不要留空
-* 可用`finally`區塊,無論程式碼有無錯誤發生,finally區塊內的程式碼總是會被執行
-* 小心使用`finally`區塊,只要有`finally`區塊,try跟catch區塊的`return都會被忽略`
+* `catch` 負責捕捉異常
+* `catch` 區塊不要留空
+* 可用 `finally` 區塊,無論程式碼有無錯誤發生,finally區塊內的程式碼總是會被執行
+* 小心使用 `finally` 區塊,只要有 `finally` 區塊, try 跟 catch 區塊的` return 都會被忽略`
 
 ```
 // 好的寫法
@@ -1206,8 +1212,8 @@ if (myNull === null) {
 ```
 #### 7.2 檢測內建物件(Object, Array, Date, Error)與自定義物件<a id="7_object"></a>
 
-* 用'instanceof'關鍵字
-* 'instanceof'不僅會檢查物件的建構函式(Constuctor),也會檢查該物件的原型(Prototype),因此避免使用`myObject instanceof Object`來檢測物件是否屬於某個特定物件
+* 用 'instanceof' 關鍵字
+* 'instanceof' 不僅會檢查物件的建構函式(Constuctor), 也會檢查該物件的原型(Prototype), 因此避免使用 `myObject instanceof Object` 來檢測物件是否屬於某個特定物件
 
 ```
 var myDate = new Date();
@@ -1233,7 +1239,7 @@ if (myPerson instanceof Person) { // true
 	doSomething();
 }
 
-// 不好的做法: 用Object檢測物件
+// 不好的做法: 用 Object 檢測物件
 if (myPerson instanceof Object) { // true
 
 }
@@ -1241,8 +1247,8 @@ if (myPerson instanceof Object) { // true
 
 #### 7.3 檢測函式<a id="7_func"></a>
 
-* 使用`typeof`關鍵字
-* 注意,在IE8以下的瀏覽器,使用`typeof`檢測DOM的函式(例如 document.getElementById),會回傳`object`而不是`function`, 因此要用`in`來檢測
+* 使用 `typeof` 關鍵字
+* 注意,在 IE8 以下的瀏覽器,使用 `typeof` 檢測 DOM 的函式(例如 document.getElementById),會回傳 `object` 而不是 `function`, 因此要用 `in` 來檢測
 
 ```
 function myFunc() {
@@ -1261,14 +1267,14 @@ if ('getElementById' in document) {
 
 #### 7.4 檢測陣列<a id="7_array"></a>
 
-* 可用Kangax解決方案
-* ECMAScript5可用Array.isArray()
-* IE9+, Chrome, FireFox 4+, Safari 5+, Opera 10.5+都有Array.isArray()
+* 可用 Kangax 解決方案
+* ECMAScript5 可用 Array.isArray()
+* IE9+, Chrome, FireFox 4+, Safari 5+, Opera 10.5+ 都有 Array.isArray()
 
 ```
 var myArr = [1, 2, 3, 4, 5];
 
-// Kangax解決方案
+// Kangax 解決方案
 function isArray(value) {
 	return Object.prototype.toString.call(value) === '[object Array]';
 }
@@ -1280,9 +1286,9 @@ if (isArray[myArr]) {
 
 #### 7.5 檢測屬性<a id="7_attr"></a>
 
-* 用`in`來檢測
-* 如果只想檢查物件某個屬性是否存在(略過prototype屬性)，可使用`hasOwnProperty()`方法
-* IE8以下的DOM物件並非繼承自Object, 因此不包含hasOwnProperty()這個方法,因此請使用`in`運算符
+* 用 `in` 來檢測
+* 如果只想檢查物件某個屬性是否存在(略過 prototype 屬性)，可使用 `hasOwnProperty()` 方法
+* IE8 以下的 DOM 物件並非繼承自 Object, 因此不包含 hasOwnProperty()這個方法, 因此請使用 `in` 運算符
 
 ```
 var person = {
@@ -1290,17 +1296,17 @@ var person = {
 	age: 28
 };
 
-// 用in來檢測
+// 用 in 來檢測
 if ('name' in person) {
 	doSomething();
 }
 
-// 對於非DOM物件的屬性檢測方法
+// 對於非 DOM 物件的屬性檢測方法
 if (person.hasOwnProperty('name')) {
 	doSomething();
 }
 
-// 如果不確定是否為DOM物件
+// 如果不確定是否為 DOM 物件
 if ('hasOwnProperty' in person && person.hasOwnProperty('name')) {
 	doSomething();
 }
@@ -1310,7 +1316,7 @@ if ('hasOwnProperty' in person && person.hasOwnProperty('name')) {
 #### 8.1 宣告嚴格模式<a id="8_declare"></a>
 
 * 可以在檔案、程式或函式的開頭加上 `"use strict"`; 宣告 Strict 模式
-* Strict 模式宣告的範圍取決於宣告本身的內容。 如果在全域內容中 (在函式範圍之外) 宣告，則程式中的所有程式碼都會套用 Strict 模式； 如果是在函式宣告，則函式中的所有程式碼都會套用 Strict 模式
+* Strict 模式宣告的範圍取決於宣告本身的內容. 如果在全域內容中 (在函式範圍之外) 宣告, 則程式中的所有程式碼都會套用 Strict 模式； 如果是在函式宣告，則函式中的所有程式碼都會套用 Strict 模式
 
 ```
 // 在'use strict'以下的所有程式碼都會套用 Strict 模式
@@ -1326,8 +1332,8 @@ testvar = 5;
 
 ```
 /* 
-  只有 testFunction 內的程式碼才會套用 Strict 模式。 
-  函式以外的變數宣告不會導致語法錯誤，但是函式中的宣告則會。
+  只有 testFunction 內的程式碼才會套用 Strict 模式. 
+  函式以外的變數宣告不會導致語法錯誤, 但是函式中的宣告則會.
 */
 function testFunction(){
     'use strict';
@@ -1388,8 +1394,8 @@ testObj.name = "Bob";
 ```
 
 ##### 8.2.4 delete
-* 無法刪除宣告的變數(沒嚴格模式時,也不會刪除,但不會拋出錯誤)
-* 無法刪除configurable設為false的屬性
+* 無法刪除宣告的變數(沒嚴格模式時, 也不會刪除, 但不會拋出錯誤)
+* 無法刪除 configurable 設為 false 的屬性
 
 ```
 var testvar = 15;
@@ -1470,7 +1476,7 @@ var testescape = \010;
 ```
 
 ##### 8.2.9 this
-* 如果this的值為`null`或`undefined`,就無法轉換成全域物件
+* 如果this的值為 `null` 或 `undefined` ,就無法轉換成全域物件
 
 ```
 'use strict';
@@ -1483,7 +1489,7 @@ var testvar = testFunc();
 alert(testvar); // undefined, 若非嚴格模式在瀏覽器執行則是[object Window])
 ```
 
-##### 8.2.10 eval不可當作變數名稱
+##### 8.2.10 eval 不可當作變數名稱
 
 ```
 'use strict';
@@ -1492,7 +1498,7 @@ alert(testvar); // undefined, 若非嚴格模式在瀏覽器執行則是[object 
 var eval = 10;
 ```
 
-##### 8.2.11 不可使用在eval函式內宣告的變數
+##### 8.2.11 不可使用在 eval 函式內宣告的變數
 
 ```
 'use strict';
@@ -1519,7 +1525,7 @@ for (index in arr) {
 }
 ```
 
-##### 8.2.13 arguments不可當作變數名稱
+##### 8.2.13 arguments 不可當作變數名稱
 
 ```
 'use strict';
@@ -1528,7 +1534,7 @@ for (index in arr) {
 var arguments = 10;
 ```
 
-##### 8.2.14 不可使用arguments.callee
+##### 8.2.14 不可使用 arguments.callee
 
 ```
 'use strict';
@@ -1545,7 +1551,7 @@ function test(testInt) {
 }
 ```
 
-##### 8.2.15 不可使用with
+##### 8.2.15 不可使用 with
 
 
 ```
